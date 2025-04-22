@@ -6,9 +6,194 @@
     <title>有趣网站导航</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* 添加背景动画效果 */
+        .bg-animation {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+        
+        .bg-animation li {
+            position: absolute;
+            display: block;
+            list-style: none;
+            width: 20px;
+            height: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            animation: animate 25s linear infinite;
+            bottom: -150px;
+            border-radius: 50%;
+        }
+        
+        .bg-animation li:nth-child(1) {
+            left: 25%;
+            width: 80px;
+            height: 80px;
+            animation-delay: 0s;
+        }
+        
+        .bg-animation li:nth-child(2) {
+            left: 10%;
+            width: 20px;
+            height: 20px;
+            animation-delay: 2s;
+            animation-duration: 12s;
+        }
+        
+        .bg-animation li:nth-child(3) {
+            left: 70%;
+            width: 20px;
+            height: 20px;
+            animation-delay: 4s;
+        }
+        
+        .bg-animation li:nth-child(4) {
+            left: 40%;
+            width: 60px;
+            height: 60px;
+            animation-delay: 0s;
+            animation-duration: 18s;
+        }
+        
+        .bg-animation li:nth-child(5) {
+            left: 65%;
+            width: 20px;
+            height: 20px;
+            animation-delay: 0s;
+        }
+        
+        .bg-animation li:nth-child(6) {
+            left: 75%;
+            width: 110px;
+            height: 110px;
+            animation-delay: 3s;
+        }
+        
+        .bg-animation li:nth-child(7) {
+            left: 35%;
+            width: 150px;
+            height: 150px;
+            animation-delay: 7s;
+        }
+        
+        .bg-animation li:nth-child(8) {
+            left: 50%;
+            width: 25px;
+            height: 25px;
+            animation-delay: 15s;
+            animation-duration: 45s;
+        }
+        
+        .bg-animation li:nth-child(9) {
+            left: 20%;
+            width: 15px;
+            height: 15px;
+            animation-delay: 2s;
+            animation-duration: 35s;
+        }
+        
+        .bg-animation li:nth-child(10) {
+            left: 85%;
+            width: 150px;
+            height: 150px;
+            animation-delay: 0s;
+            animation-duration: 11s;
+        }
+        
+        @keyframes animate {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 1;
+                border-radius: 50%;
+            }
+            100% {
+                transform: translateY(-1000px) rotate(720deg);
+                opacity: 0;
+                border-radius: 50%;
+            }
+        }
+        
+        /* 卡片内自定义SVG图标 */
+        .svg-icon {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            color: white;
+            font-size: 24px;
+        }
+        
+        .icon-ai {
+            background: linear-gradient(135deg, #ff6b6b, #6b66ff);
+        }
+        
+        .icon-api {
+            background: linear-gradient(135deg, #33b5e5, #0099cc);
+        }
+        
+        .icon-tools {
+            background: linear-gradient(135deg, #8bc34a, #4caf50);
+        }
+        
+        .icon-learn {
+            background: linear-gradient(135deg, #ff9800, #ff5722);
+        }
+        
+        .icon-fun {
+            background: linear-gradient(135deg, #9c27b0, #673ab7);
+        }
+        
+        /* 波浪效果 */
+        .wave-container {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+            line-height: 0;
+            transform: rotate(180deg);
+        }
+
+        .wave-container svg {
+            position: relative;
+            display: block;
+            width: calc(100% + 1.3px);
+            height: 55px;
+        }
+
+        .wave-container .shape-fill {
+            fill: #FFFFFF;
+        }
+        
+        /* 顶部动画 */
+        .header-animation {
+            position: relative;
+        }
+    </style>
 </head>
 <body>
-    <header>
+    <header class="header-animation">
+        <!-- 背景动画 -->
+        <ul class="bg-animation">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+        
         <div class="container">
             <h1>有趣网站导航</h1>
             <p>发现并分享精彩网络资源</p>
@@ -16,6 +201,13 @@
                 <input type="text" id="searchInput" placeholder="搜索网站...">
                 <button id="searchButton"><i class="fas fa-search"></i></button>
             </div>
+        </div>
+        
+        <!-- 波浪效果 -->
+        <div class="wave-container">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+            </svg>
         </div>
     </header>
 
@@ -29,17 +221,15 @@
                 <button class="tab-btn" data-category="learn">学习资源</button>
                 <button class="tab-btn" data-category="fun">娱乐休闲</button>
             </div>
-            
-            <div class="add-site">
-                <button id="addSiteBtn"><i class="fas fa-plus"></i> 添加网站</button>
-            </div>
         </div>
 
         <div class="websites-grid" id="websitesGrid">
             <!-- AI工具 -->
             <div class="website-card" data-category="ai">
                 <div class="card-header">
-                    <img src="https://via.placeholder.com/60" alt="Reve Art Icon" class="site-icon">
+                    <div class="svg-icon icon-ai">
+                        <i class="fas fa-paint-brush"></i>
+                    </div>
                     <h3>Reve Art</h3>
                 </div>
                 <p class="description">AI绘画与艺术创作平台，提供多种风格的AI图像生成</p>
@@ -55,7 +245,9 @@
             <!-- API接口 -->
             <div class="website-card" data-category="api">
                 <div class="card-header">
-                    <img src="https://via.placeholder.com/60" alt="vvhan API Icon" class="site-icon">
+                    <div class="svg-icon icon-api">
+                        <i class="fas fa-code"></i>
+                    </div>
                     <h3>vvhan API</h3>
                 </div>
                 <p class="description">免费实用的API接口集合，包括随机图片、音乐、天气等多种接口</p>
@@ -71,7 +263,9 @@
             <!-- 实用工具 -->
             <div class="website-card" data-category="tools">
                 <div class="card-header">
-                    <img src="https://via.placeholder.com/60" alt="Figma Icon" class="site-icon">
+                    <div class="svg-icon icon-tools">
+                        <i class="fas fa-tools"></i>
+                    </div>
                     <h3>Figma</h3>
                 </div>
                 <p class="description">专业的在线设计工具，支持协作设计</p>
@@ -87,7 +281,9 @@
             <!-- 学习资源 -->
             <div class="website-card" data-category="learn">
                 <div class="card-header">
-                    <img src="https://via.placeholder.com/60" alt="MDN Web Docs Icon" class="site-icon">
+                    <div class="svg-icon icon-learn">
+                        <i class="fas fa-book"></i>
+                    </div>
                     <h3>MDN Web Docs</h3>
                 </div>
                 <p class="description">Web开发技术文档库，提供HTML、CSS、JavaScript等详细参考</p>
@@ -103,7 +299,9 @@
             <!-- 娱乐休闲 -->
             <div class="website-card" data-category="fun">
                 <div class="card-header">
-                    <img src="https://via.placeholder.com/60" alt="10 Min Mail Icon" class="site-icon">
+                    <div class="svg-icon icon-fun">
+                        <i class="fas fa-envelope"></i>
+                    </div>
                     <h3>10分钟邮箱</h3>
                 </div>
                 <p class="description">临时邮箱服务，无需注册即可使用</p>
@@ -115,48 +313,64 @@
                     <a href="https://10minutemail.com" target="_blank" class="visit-btn">访问 <i class="fas fa-external-link-alt"></i></a>
                 </div>
             </div>
+            
+            <!-- 再加几个卡片，增加多样性 -->
+            <div class="website-card" data-category="ai">
+                <div class="card-header">
+                    <div class="svg-icon icon-ai">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>ChatGPT</h3>
+                </div>
+                <p class="description">OpenAI开发的大型语言模型，可进行自然语言对话和创作</p>
+                <div class="card-footer">
+                    <div class="tags">
+                        <span class="tag">AI</span>
+                        <span class="tag">聊天机器人</span>
+                    </div>
+                    <a href="https://chat.openai.com" target="_blank" class="visit-btn">访问 <i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+            
+            <div class="website-card" data-category="tools">
+                <div class="card-header">
+                    <div class="svg-icon icon-tools">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <h3>Notion</h3>
+                </div>
+                <p class="description">功能强大的全能型笔记工具，集协作、文档、知识库、项目管理于一体</p>
+                <div class="card-footer">
+                    <div class="tags">
+                        <span class="tag">笔记</span>
+                        <span class="tag">协作</span>
+                    </div>
+                    <a href="https://notion.so" target="_blank" class="visit-btn">访问 <i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+            
+            <div class="website-card" data-category="fun">
+                <div class="card-header">
+                    <div class="svg-icon icon-fun">
+                        <i class="fas fa-gamepad"></i>
+                    </div>
+                    <h3>itch.io</h3>
+                </div>
+                <p class="description">独立游戏平台，提供众多免费和付费的独立游戏</p>
+                <div class="card-footer">
+                    <div class="tags">
+                        <span class="tag">游戏</span>
+                        <span class="tag">独立开发</span>
+                    </div>
+                    <a href="https://itch.io" target="_blank" class="visit-btn">访问 <i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
         </div>
     </main>
 
-    <div id="addSiteModal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2>添加新网站</h2>
-            <form id="addSiteForm">
-                <div class="form-group">
-                    <label for="siteName">网站名称</label>
-                    <input type="text" id="siteName" required>
-                </div>
-                <div class="form-group">
-                    <label for="siteUrl">网站地址</label>
-                    <input type="url" id="siteUrl" required placeholder="https://">
-                </div>
-                <div class="form-group">
-                    <label for="siteDescription">网站描述</label>
-                    <textarea id="siteDescription" required></textarea>
-                </div>
-                <div class="form-group">
-                    <label for="siteCategory">分类</label>
-                    <select id="siteCategory" required>
-                        <option value="ai">AI工具</option>
-                        <option value="api">API接口</option>
-                        <option value="tools">实用工具</option>
-                        <option value="learn">学习资源</option>
-                        <option value="fun">娱乐休闲</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="siteTags">标签 (用逗号分隔)</label>
-                    <input type="text" id="siteTags" placeholder="例如: 工具,设计,免费">
-                </div>
-                <button type="submit" class="submit-btn">添加网站</button>
-            </form>
-        </div>
-    </div>
-
     <footer>
         <div class="container">
-            <p>&copy; 2023 有趣网站导航 | <a href="#about">关于我们</a></p>
+            <p>&copy; 2023 有趣网站导航 | <a href="https://github.com/yourusername/interesting_website" target="_blank">GitHub</a></p>
         </div>
     </footer>
 
