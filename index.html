@@ -176,6 +176,21 @@
         .header-animation {
             position: relative;
         }
+        
+        /* 爱心动画效果 */
+        .heart-pulse {
+            display: inline-block;
+            animation: heartbeat 1.5s ease infinite;
+            color: #ff4757;
+        }
+        
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            25% { transform: scale(1.1); }
+            50% { transform: scale(1); }
+            75% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
     </style>
 </head>
 <body>
@@ -224,6 +239,25 @@
         </div>
 
         <div class="websites-grid" id="websitesGrid">
+            <!-- 新添加的GIF生成网站 -->
+            <div class="website-card" data-category="fun">
+                <div class="card-header">
+                    <div class="svg-icon icon-fun">
+                        <i class="fas fa-gift"></i>
+                    </div>
+                    <h3>在线GIF文字生成器 <i class="fas fa-heart heart-pulse"></i></h3>
+                </div>
+                <p class="description">输入文字即可生成动态GIF，支持自定义文字颜色和背景颜色，多种动画效果可选</p>
+                <div class="card-footer">
+                    <div class="tags">
+                        <span class="tag">GIF</span>
+                        <span class="tag">文字动画</span>
+                        <span class="tag">创意</span>
+                    </div>
+                    <a href="https://aidn.jp/ugomoji/" target="_blank" class="visit-btn">访问 <i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+            
             <!-- AI工具 -->
             <div class="website-card" data-category="ai">
                 <div class="card-header">
@@ -370,7 +404,7 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2023 有趣网站导航 | <a href="https://github.com/yourusername/interesting_website" target="_blank">GitHub</a></p>
+            <p>&copy; 2025 有趣网站导航 | <a href="https://github.com/yourusername/interesting_website" target="_blank">GitHub</a></p>
         </div>
     </footer>
 
