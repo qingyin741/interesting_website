@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>有趣网站导航</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>有趣网站导航</h1>
+            <p>发现并分享精彩网络资源</p>
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="搜索网站...">
+                <button id="searchButton"><i class="fas fa-search"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="categories">
+            <div class="category-tabs">
+                <button class="tab-btn active" data-category="all">全部</button>
+                <button class="tab-btn" data-category="ai">AI工具</button>
+                <button class="tab-btn" data-category="api">API接口</button>
+                <button class="tab-btn" data-category="tools">实用工具</button>
+                <button class="tab-btn" data-category="learn">学习资源</button>
+                <button class="tab-btn" data-category="fun">娱乐休闲</button>
+            </div>
+            
+            <div class="add-site">
+                <button id="addSiteBtn"><i class="fas fa-plus"></i> 添加网站</button>
+            </div>
+        </div>
+
+        <div class="websites-grid" id="websitesGrid">
+            <!-- AI工具 -->
+            <div class="website-card" data-category="ai">
+                <div class="card-header">
+                    <img src="https://via.placeholder.com/60" alt="Reve Art Icon" class="site-icon">
+                    <h3>Reve Art</h3>
+                </div>
+                <p class="description">AI绘画与艺术创作平台，提供多种风格的AI图像生成</p>
+                <div class="card-footer">
+                    <div class="tags">
+                        <span class="tag">AI绘画</span>
+                        <span class="tag">艺术</span>
+                    </div>
+                    <a href="https://reve.art" target="_blank" class="visit-btn">访问 <i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+
+            <!-- API接口 -->
+            <div class="website-card" data-category="api">
+                <div class="card-header">
+                    <img src="https://via.placeholder.com/60" alt="vvhan API Icon" class="site-icon">
+                    <h3>vvhan API</h3>
+                </div>
+                <p class="description">免费实用的API接口集合，包括随机图片、音乐、天气等多种接口</p>
+                <div class="card-footer">
+                    <div class="tags">
+                        <span class="tag">API</span>
+                        <span class="tag">开发</span>
+                    </div>
+                    <a href="https://api.vvhan.com/" target="_blank" class="visit-btn">访问 <i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+
+            <!-- 实用工具 -->
+            <div class="website-card" data-category="tools">
+                <div class="card-header">
+                    <img src="https://via.placeholder.com/60" alt="Figma Icon" class="site-icon">
+                    <h3>Figma</h3>
+                </div>
+                <p class="description">专业的在线设计工具，支持协作设计</p>
+                <div class="card-footer">
+                    <div class="tags">
+                        <span class="tag">设计</span>
+                        <span class="tag">协作</span>
+                    </div>
+                    <a href="https://figma.com" target="_blank" class="visit-btn">访问 <i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+
+            <!-- 学习资源 -->
+            <div class="website-card" data-category="learn">
+                <div class="card-header">
+                    <img src="https://via.placeholder.com/60" alt="MDN Web Docs Icon" class="site-icon">
+                    <h3>MDN Web Docs</h3>
+                </div>
+                <p class="description">Web开发技术文档库，提供HTML、CSS、JavaScript等详细参考</p>
+                <div class="card-footer">
+                    <div class="tags">
+                        <span class="tag">编程</span>
+                        <span class="tag">教程</span>
+                    </div>
+                    <a href="https://developer.mozilla.org" target="_blank" class="visit-btn">访问 <i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+
+            <!-- 娱乐休闲 -->
+            <div class="website-card" data-category="fun">
+                <div class="card-header">
+                    <img src="https://via.placeholder.com/60" alt="10 Min Mail Icon" class="site-icon">
+                    <h3>10分钟邮箱</h3>
+                </div>
+                <p class="description">临时邮箱服务，无需注册即可使用</p>
+                <div class="card-footer">
+                    <div class="tags">
+                        <span class="tag">工具</span>
+                        <span class="tag">隐私</span>
+                    </div>
+                    <a href="https://10minutemail.com" target="_blank" class="visit-btn">访问 <i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div id="addSiteModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>添加新网站</h2>
+            <form id="addSiteForm">
+                <div class="form-group">
+                    <label for="siteName">网站名称</label>
+                    <input type="text" id="siteName" required>
+                </div>
+                <div class="form-group">
+                    <label for="siteUrl">网站地址</label>
+                    <input type="url" id="siteUrl" required placeholder="https://">
+                </div>
+                <div class="form-group">
+                    <label for="siteDescription">网站描述</label>
+                    <textarea id="siteDescription" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="siteCategory">分类</label>
+                    <select id="siteCategory" required>
+                        <option value="ai">AI工具</option>
+                        <option value="api">API接口</option>
+                        <option value="tools">实用工具</option>
+                        <option value="learn">学习资源</option>
+                        <option value="fun">娱乐休闲</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="siteTags">标签 (用逗号分隔)</label>
+                    <input type="text" id="siteTags" placeholder="例如: 工具,设计,免费">
+                </div>
+                <button type="submit" class="submit-btn">添加网站</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 有趣网站导航 | <a href="#about">关于我们</a></p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 
