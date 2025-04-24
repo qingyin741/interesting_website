@@ -192,6 +192,22 @@
             75% { transform: scale(1.1); }
             100% { transform: scale(1); }
         }
+        
+        /* 新增小火箭图标样式 */
+        .icon-rocket {
+            background: linear-gradient(135deg, #ff4757, #ff6b6b);
+        }
+        
+        /* 新增闪烁动画 */
+        .blink {
+            animation: blink 1.5s infinite;
+        }
+        
+        @keyframes blink {
+            0% { opacity: 1; }
+            50% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
     </style>
 </head>
 <body>
@@ -236,10 +252,87 @@
                 <button class="tab-btn" data-category="tools">实用工具</button>
                 <button class="tab-btn" data-category="learn">学习资源</button>
                 <button class="tab-btn" data-category="fun">娱乐休闲</button>
+                <button class="tab-btn" data-category="rocket">小火箭</button>
             </div>
         </div>
 
         <div class="websites-grid" id="websitesGrid">
+            <!-- 新添加的小火箭共享账号网站1 -->
+            <div class="website-card" data-category="rocket">
+                <div class="card-header">
+                    <div class="svg-icon icon-rocket">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3>小火箭共享账号 <i class="fas fa-fire blink" style="color: #ff4757;"></i></h3>
+                </div>
+                <p class="description">聚千惠小火箭共享账号平台，提供Shadowrocket苹果ID共享，输入正确接头暗号，页面会显示账号密码</p>
+                <div class="card-footer">
+                    <div class="tags">
+                        <span class="tag">Shadowrocket</span>
+                        <span class="tag">共享账号</span>
+                        <span class="tag">网络工具</span>
+                    </div>
+                    <a href="https://id.聚千惠.中国/share/QXzYDAwOPU" target="_blank" class="visit-btn">访问 <i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+            
+            <!-- 新添加的小火箭共享账号网站2 -->
+            <div class="website-card" data-category="rocket">
+                <div class="card-header">
+                    <div class="svg-icon icon-rocket">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3>Bocchi小火箭ID <i class="fas fa-fire blink" style="color: #ff4757;"></i></h3>
+                </div>
+                <p class="description">Bocchi提供的Shadowrocket苹果共享账号平台，获取小火箭等国际应用的Apple ID账号</p>
+                <div class="card-footer">
+                    <div class="tags">
+                        <span class="tag">Shadowrocket</span>
+                        <span class="tag">共享账号</span>
+                        <span class="tag">Apple ID</span>
+                    </div>
+                    <a href="https://id.bocchi.vip/" target="_blank" class="visit-btn">访问 <i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+            
+            <!-- 新添加的小火箭共享账号网站3 -->
+            <div class="website-card" data-category="rocket">
+                <div class="card-header">
+                    <div class="svg-icon icon-rocket">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3>小火箭共享账号博客 <i class="fas fa-fire blink" style="color: #ff4757;"></i></h3>
+                </div>
+                <p class="description">提供Shadowrocket（小火箭）共享账号的博客，持续更新，TG频道：@stymei1</p>
+                <div class="card-footer">
+                    <div class="tags">
+                        <span class="tag">Shadowrocket</span>
+                        <span class="tag">博客</span>
+                        <span class="tag">TG频道</span>
+                    </div>
+                    <a href="https://jsnzkpg.blogspot.com/" target="_blank" class="visit-btn">访问 <i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+            
+            <!-- 新添加的小火箭共享账号网站4 -->
+            <div class="website-card" data-category="rocket">
+                <div class="card-header">
+                    <div class="svg-icon icon-rocket">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3>Manus小火箭账号 <i class="fas fa-fire blink" style="color: #ff4757;"></i></h3>
+                </div>
+                <p class="description">Manus空间提供的Shadowrocket（小火箭）共享账号资源站，帮助用户获取iOS科学上网工具</p>
+                <div class="card-footer">
+                    <div class="tags">
+                        <span class="tag">Shadowrocket</span>
+                        <span class="tag">共享账号</span>
+                        <span class="tag">iOS工具</span>
+                    </div>
+                    <a href="https://rjueulti.manus.space/" target="_blank" class="visit-btn">访问 <i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+            
             <!-- 新添加的GIF生成网站 -->
             <div class="website-card" data-category="fun">
                 <div class="card-header">
@@ -426,7 +519,7 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2025 有趣网站导航 | <a href="https://github.com/yourusername/interesting_website" target="_blank">GitHub</a></p>
+            <p>&copy; 2025 有趣网站导航 | <a href="https://github.com/qingyin741/interesting_website" target="_blank">GitHub</a></p>
         </div>
     </footer>
 
