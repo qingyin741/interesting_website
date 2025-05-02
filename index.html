@@ -7,208 +7,6 @@
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='grad1' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%2300E5FF' /%3E%3Cstop offset='50%25' stop-color='%23FF00E5' /%3E%3Cstop offset='100%25' stop-color='%23E5FF00' /%3E%3C/linearGradient%3E%3CradialGradient id='glow' cx='50%25' cy='50%25' r='50%25'%3E%3Cstop offset='0%25' stop-color='%23FFFFFF' stop-opacity='0.7' /%3E%3Cstop offset='100%25' stop-color='%23FFFFFF' stop-opacity='0' /%3E%3C/radialGradient%3E%3Cfilter id='blur' x='-50%25' y='-50%25' width='200%25' height='200%25'%3E%3CfeGaussianBlur stdDeviation='2' /%3E%3C/filter%3E%3Cstyle%3E@keyframes float %7B0%25 %7Btransform: translateY(0px) rotate(0deg);%7D 25%25 %7Btransform: translateY(-5px) rotate(2deg);%7D 50%25 %7Btransform: translateY(0px) rotate(0deg);%7D 75%25 %7Btransform: translateY(5px) rotate(-2deg);%7D 100%25 %7Btransform: translateY(0px) rotate(0deg);%7D%7D @keyframes spin %7B0%25 %7Btransform: rotate(0deg);%7D 100%25 %7Btransform: rotate(360deg);%7D%7D @keyframes sparkle %7B0%25 %7Bopacity: 0.2;%7D 50%25 %7Bopacity: 1;%7D 100%25 %7Bopacity: 0.2;%7D%7D @keyframes colorShift %7B0%25 %7Bstop-color: %2300E5FF;%7D 33%25 %7Bstop-color: %23FF00E5;%7D 66%25 %7Bstop-color: %23E5FF00;%7D 100%25 %7Bstop-color: %2300E5FF;%7D%7D .compass %7Banimation: float 4s ease-in-out infinite;%7D .ring %7Banimation: spin 15s linear infinite; transform-origin: center;%7D .sparkle %7Banimation: sparkle 1.5s ease-in-out infinite; transform-origin: center;%7D .stop1 %7Banimation: colorShift 12s linear infinite;%7D .stop2 %7Banimation: colorShift 12s linear infinite; animation-delay: -4s;%7D .stop3 %7Banimation: colorShift 12s linear infinite; animation-delay: -8s;%7D%3C/style%3E%3C/defs%3E%3Ccircle cx='50' cy='50' r='48' fill='url(%23glow)' filter='url(%23blur)' /%3E%3Cg class='compass'%3E%3Ccircle cx='50' cy='50' r='32' fill='url(%23grad1)' /%3E%3Cpath d='M50 18 L54 46 L82 50 L54 54 L50 82 L46 54 L18 50 L46 46 Z' fill='white' opacity='0.9' /%3E%3C/g%3E%3Cg class='ring' fill='none' stroke-width='2' stroke-dasharray='3 3'%3E%3Ccircle cx='50' cy='50' r='42' stroke='url(%23grad1)' /%3E%3C/g%3E%3Cg class='sparkle'%3E%3Ccircle cx='25' cy='30' r='3' fill='white' /%3E%3Ccircle cx='75' cy='70' r='2' fill='white' /%3E%3Ccircle cx='65' cy='25' r='2.5' fill='white' /%3E%3Ccircle cx='30' cy='75' r='2.5' fill='white' /%3E%3C/g%3E%3C/svg%3E">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        /* 添加背景动画效果 */
-        .bg-animation {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            z-index: -1;
-        }
-        
-        .bg-animation li {
-            position: absolute;
-            display: block;
-            list-style: none;
-            width: 20px;
-            height: 20px;
-            background: rgba(255, 255, 255, 0.1);
-            animation: animate 25s linear infinite;
-            bottom: -150px;
-            border-radius: 50%;
-        }
-        
-        .bg-animation li:nth-child(1) {
-            left: 25%;
-            width: 80px;
-            height: 80px;
-            animation-delay: 0s;
-        }
-        
-        .bg-animation li:nth-child(2) {
-            left: 10%;
-            width: 20px;
-            height: 20px;
-            animation-delay: 2s;
-            animation-duration: 12s;
-        }
-        
-        .bg-animation li:nth-child(3) {
-            left: 70%;
-            width: 20px;
-            height: 20px;
-            animation-delay: 4s;
-        }
-        
-        .bg-animation li:nth-child(4) {
-            left: 40%;
-            width: 60px;
-            height: 60px;
-            animation-delay: 0s;
-            animation-duration: 18s;
-        }
-        
-        .bg-animation li:nth-child(5) {
-            left: 65%;
-            width: 20px;
-            height: 20px;
-            animation-delay: 0s;
-        }
-        
-        .bg-animation li:nth-child(6) {
-            left: 75%;
-            width: 110px;
-            height: 110px;
-            animation-delay: 3s;
-        }
-        
-        .bg-animation li:nth-child(7) {
-            left: 35%;
-            width: 150px;
-            height: 150px;
-            animation-delay: 7s;
-        }
-        
-        .bg-animation li:nth-child(8) {
-            left: 50%;
-            width: 25px;
-            height: 25px;
-            animation-delay: 15s;
-            animation-duration: 45s;
-        }
-        
-        .bg-animation li:nth-child(9) {
-            left: 20%;
-            width: 15px;
-            height: 15px;
-            animation-delay: 2s;
-            animation-duration: 35s;
-        }
-        
-        .bg-animation li:nth-child(10) {
-            left: 85%;
-            width: 150px;
-            height: 150px;
-            animation-delay: 0s;
-            animation-duration: 11s;
-        }
-        
-        @keyframes animate {
-            0% {
-                transform: translateY(0) rotate(0deg);
-                opacity: 1;
-                border-radius: 50%;
-            }
-            100% {
-                transform: translateY(-1000px) rotate(720deg);
-                opacity: 0;
-                border-radius: 50%;
-            }
-        }
-        
-        /* 卡片内自定义SVG图标 */
-        .svg-icon {
-            width: 50px;
-            height: 50px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 10px;
-            color: white;
-            font-size: 24px;
-        }
-        
-        .icon-ai {
-            background: linear-gradient(135deg, #ff6b6b, #6b66ff);
-        }
-        
-        .icon-api {
-            background: linear-gradient(135deg, #33b5e5, #0099cc);
-        }
-        
-        .icon-tools {
-            background: linear-gradient(135deg, #8bc34a, #4caf50);
-        }
-        
-        .icon-learn {
-            background: linear-gradient(135deg, #ff9800, #ff5722);
-        }
-        
-        .icon-fun {
-            background: linear-gradient(135deg, #9c27b0, #673ab7);
-        }
-        
-        /* 波浪效果 */
-        .wave-container {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            overflow: hidden;
-            line-height: 0;
-            transform: rotate(180deg);
-        }
-
-        .wave-container svg {
-            position: relative;
-            display: block;
-            width: calc(100% + 1.3px);
-            height: 55px;
-        }
-
-        .wave-container .shape-fill {
-            fill: #FFFFFF;
-        }
-        
-        /* 顶部动画 */
-        .header-animation {
-            position: relative;
-        }
-        
-        /* 爱心动画效果 */
-        .heart-pulse {
-            display: inline-block;
-            animation: heartbeat 1.5s ease infinite;
-            color: #ff4757;
-        }
-        
-        @keyframes heartbeat {
-            0% { transform: scale(1); }
-            25% { transform: scale(1.1); }
-            50% { transform: scale(1); }
-            75% { transform: scale(1.1); }
-            100% { transform: scale(1); }
-        }
-        
-        /* 新增小火箭图标样式 */
-        .icon-rocket {
-            background: linear-gradient(135deg, #ff4757, #ff6b6b);
-        }
-        
-        /* 新增闪烁动画 */
-        .blink {
-            animation: blink 1.5s infinite;
-        }
-        
-        @keyframes blink {
-            0% { opacity: 1; }
-            50% { opacity: 0.5; }
-            100% { opacity: 1; }
-        }
-    </style>
 </head>
 <body>
     <header class="header-animation">
@@ -244,7 +42,7 @@
     </header>
 
     <main class="container">
-        <div class="categories">
+        <section class="categories">
             <div class="category-tabs">
                 <button class="tab-btn active" data-category="all">全部</button>
                 <button class="tab-btn" data-category="ai">AI工具</button>
@@ -257,11 +55,11 @@
                 <button class="tab-btn" data-category="rocket">小火箭</button>
                 <button class="tab-btn" data-category="temp-email">临时邮箱</button>
             </div>
-        </div>
+        </section>
 
-        <div class="websites-grid" id="websitesGrid">
+        <section class="websites-grid" id="websitesGrid">
             <!-- PDF处理网站组 -->
-            <div class="website-card" data-category="document" data-tags="pdf,转换,合并,分割,压缩">
+            <article class="website-card" data-category="document" data-tags="pdf,转换,合并,分割,压缩">
                 <div class="card-header">
                     <div class="svg-icon icon-tools">
                         <i class="fas fa-file-pdf"></i>
@@ -277,9 +75,9 @@
                     </div>
                     <a href="https://www.i2pdf.com/cn" target="_blank" class="visit-btn">访问 <i class="fas fa-external-link-alt"></i></a>
                 </div>
-            </div>
+            </article>
             
-            <div class="website-card" data-category="document" data-tags="pdf,转换,合并,分割,无广告">
+            <article class="website-card" data-category="document" data-tags="pdf,转换,合并,分割,无广告">
                 <div class="card-header">
                     <div class="svg-icon icon-tools">
                         <i class="fas fa-file-pdf"></i>
@@ -295,9 +93,9 @@
                     </div>
                     <a href="https://quicklypdf.com/zh" target="_blank" class="visit-btn">访问 <i class="fas fa-external-link-alt"></i></a>
                 </div>
-            </div>
+            </article>
             
-            <div class="website-card" data-category="document" data-tags="论文,caj,pdf,知网,学术">
+            <article class="website-card" data-category="document" data-tags="论文,caj,pdf,知网,学术">
                 <div class="card-header">
                     <div class="svg-icon icon-tools">
                         <i class="fas fa-file-pdf"></i>
@@ -313,10 +111,10 @@
                     </div>
                     <a href="https://caj2pdf.cn/" target="_blank" class="visit-btn">访问 <i class="fas fa-external-link-alt"></i></a>
                 </div>
-            </div>
+            </article>
             
             <!-- 免版税音乐网站组 -->
-            <div class="website-card" data-category="media" data-tags="音乐,背景音乐,免费,商用,短视频">
+            <article class="website-card" data-category="media" data-tags="音乐,背景音乐,免费,商用,短视频">
                 <div class="card-header">
                     <div class="svg-icon icon-tools">
                         <i class="fas fa-music"></i>
@@ -332,9 +130,9 @@
                     </div>
                     <a href="https://pixabay.com/music/" target="_blank" class="visit-btn">访问 <i class="fas fa-external-link-alt"></i></a>
                 </div>
-            </div>
+            </article>
             
-            <div class="website-card" data-category="media" data-tags="音乐,电子音乐,免费,B站,创作">
+            <article class="website-card" data-category="media" data-tags="音乐,电子音乐,免费,B站,创作">
                 <div class="card-header">
                     <div class="svg-icon icon-tools">
                         <i class="fas fa-music"></i>
@@ -350,10 +148,10 @@
                     </div>
                     <a href="https://ncs.io/" target="_blank" class="visit-btn">访问 <i class="fas fa-external-link-alt"></i></a>
                 </div>
-            </div>
+            </article>
             
             <!-- 新添加的免版税音乐网站3 -->
-            <div class="website-card" data-category="media" data-tags="音乐,分类,详细,创作,素材">
+            <article class="website-card" data-category="media" data-tags="音乐,分类,详细,创作,素材">
                 <div class="card-header">
                     <div class="svg-icon icon-tools">
                         <i class="fas fa-music"></i>
@@ -369,10 +167,10 @@
                     </div>
                     <a href="https://www.chosic.com/free-music/all/" target="_blank" class="visit-btn">访问 <i class="fas fa-external-link-alt"></i></a>
                 </div>
-            </div>
+            </article>
             
             <!-- 新添加的免版税音乐网站4 -->
-            <div class="website-card" data-category="media" data-tags="音乐,商业,创意,短视频,创作">
+            <article class="website-card" data-category="media" data-tags="音乐,商业,创意,短视频,创作">
                 <div class="card-header">
                     <div class="svg-icon icon-tools">
                         <i class="fas fa-music"></i>
@@ -388,10 +186,10 @@
                     </div>
                     <a href="https://stocktune.com/" target="_blank" class="visit-btn">访问 <i class="fas fa-external-link-alt"></i></a>
                 </div>
-            </div>
+            </article>
             
             <!-- 新添加的小火箭共享账号网站1 -->
-            <div class="website-card" data-category="rocket" data-tags="Shadowrocket,共享,网络,接头暗号">
+            <article class="website-card" data-category="rocket" data-tags="Shadowrocket,共享,网络,接头暗号">
                 <div class="card-header">
                     <div class="svg-icon icon-rocket">
                         <i class="fas fa-rocket"></i>
@@ -407,10 +205,10 @@
                     </div>
                     <a href="https://id.聚千惠.中国/share/QXzYDAwOPU" target="_blank" class="visit-btn">访问 <i class="fas fa-external-link-alt"></i></a>
                 </div>
-            </div>
+            </article>
             
             <!-- 新添加的小火箭共享账号网站2 -->
-            <div class="website-card" data-category="rocket" data-tags="Shadowrocket,共享,AppleID">
+            <article class="website-card" data-category="rocket" data-tags="Shadowrocket,共享,AppleID">
                 <div class="card-header">
                     <div class="svg-icon icon-rocket">
                         <i class="fas fa-rocket"></i>
@@ -426,10 +224,10 @@
                     </div>
                     <a href="https://id.bocchi.vip/" target="_blank" class="visit-btn">访问 <i class="fas fa-external-link-alt"></i></a>
                 </div>
-            </div>
+            </article>
             
             <!-- 新添加的小火箭共享账号网站3 -->
-            <div class="website-card" data-category="rocket" data-tags="Shadowrocket,博客,TG频道">
+            <article class="website-card" data-category="rocket" data-tags="Shadowrocket,博客,TG频道">
                 <div class="card-header">
                     <div class="svg-icon icon-rocket">
                         <i class="fas fa-rocket"></i>
@@ -445,10 +243,10 @@
                     </div>
                     <a href="https://jsnzkpg.blogspot.com/" target="_blank" class="visit-btn">访问 <i class="fas fa-external-link-alt"></i></a>
                 </div>
-            </div>
+            </article>
             
             <!-- 新添加的小火箭共享账号网站4 -->
-            <div class="website-card" data-category="rocket" data-tags="Shadowrocket,共享,iOS">
+            <article class="website-card" data-category="rocket" data-tags="Shadowrocket,共享,iOS">
                 <div class="card-header">
                     <div class="svg-icon icon-rocket">
                         <i class="fas fa-rocket"></i>
@@ -464,10 +262,10 @@
                     </div>
                     <a href="https://rjueulti.manus.space/" target="_blank" class="visit-btn">访问 <i class="fas fa-external-link-alt"></i></a>
                 </div>
-            </div>
+            </article>
             
             <!-- 新添加的GIF生成网站 -->
-            <div class="website-card" data-category="fun" data-tags="GIF,文字,动画,创意">
+            <article class="website-card" data-category="fun" data-tags="GIF,文字,动画,创意">
                 <div class="card-header">
                     <div class="svg-icon icon-fun">
                         <i class="fas fa-gift"></i>
@@ -483,10 +281,10 @@
                     </div>
                     <a href="https://aidn.jp/ugomoji/" target="_blank" class="visit-btn">访问 <i class="fas fa-external-link-alt"></i></a>
                 </div>
-            </div>
+            </article>
             
             <!-- AI工具 -->
-            <div class="website-card" data-category="ai" data-tags="AI,绘画,艺术">
+            <article class="website-card" data-category="ai" data-tags="AI,绘画,艺术">
                 <div class="card-header">
                     <div class="svg-icon icon-ai">
                         <i class="fas fa-paint-brush"></i>
@@ -501,10 +299,10 @@
                     </div>
                     <a href="https://reve.art" target="_blank" class="visit-btn">访问 <i class="fas fa-external-link-alt"></i></a>
                 </div>
-            </div>
+            </article>
 
             <!-- API接口 -->
-            <div class="website-card" data-category="network learn" data-tags="API,开发">
+            <article class="website-card" data-category="network learn" data-tags="API,开发">
                 <div class="card-header">
                     <div class="svg-icon icon-api">
                         <i class="fas fa-code"></i>
@@ -519,10 +317,10 @@
                     </div>
                     <a href="https://api.vvhan.com/" target="_blank" class="visit-btn">访问 <i class="fas fa-external-link-alt"></i></a>
                 </div>
-            </div>
+            </article>
 
             <!-- 实用工具 -->
-            <div class="website-card" data-category="network" data-tags="文件,传输,P2P,加密,预览">
+            <article class="website-card" data-category="network" data-tags="文件,传输,P2P,加密,预览">
                 <div class="card-header">
                     <div class="svg-icon icon-tools">
                         <i class="fas fa-folder"></i>
@@ -539,10 +337,10 @@
                     </div>
                     <a href="https://folderport.com/" target="_blank" class="visit-btn">访问 <i class="fas fa-external-link-alt"></i></a>
                 </div>
-            </div>
+            </article>
 
             <!-- 学习资源 -->
-            <div class="website-card" data-category="learn" data-tags="编程,教程">
+            <article class="website-card" data-category="learn" data-tags="编程,教程">
                 <div class="card-header">
                     <div class="svg-icon icon-learn">
                         <i class="fas fa-book"></i>
@@ -557,12 +355,12 @@
                     </div>
                     <a href="https://developer.mozilla.org" target="_blank" class="visit-btn">访问 <i class="fas fa-external-link-alt"></i></a>
                 </div>
-            </div>
+            </article>
 
             
             
             <!-- 卡片增加多样性 -->
-            <div class="website-card" data-category="ai" data-tags="AI,聊天机器人">
+            <article class="website-card" data-category="ai" data-tags="AI,聊天机器人">
                 <div class="card-header">
                     <div class="svg-icon icon-ai">
                         <i class="fas fa-robot"></i>
@@ -577,9 +375,9 @@
                     </div>
                     <a href="https://chat.openai.com" target="_blank" class="visit-btn">访问 <i class="fas fa-external-link-alt"></i></a>
                 </div>
-            </div>
+            </article>
             
-            <div class="website-card" data-category="productivity document" data-tags="笔记,协作">
+            <article class="website-card" data-category="productivity document" data-tags="笔记,协作">
                 <div class="card-header">
                     <div class="svg-icon icon-tools">
                         <i class="fas fa-file-alt"></i>
@@ -594,9 +392,9 @@
                     </div>
                     <a href="https://notion.so" target="_blank" class="visit-btn">访问 <i class="fas fa-external-link-alt"></i></a>
                 </div>
-            </div>
+            </article>
             
-            <div class="website-card" data-category="fun" data-tags="游戏,独立开发">
+            <article class="website-card" data-category="fun" data-tags="游戏,独立开发">
                 <div class="card-header">
                     <div class="svg-icon icon-fun">
                         <i class="fas fa-gamepad"></i>
@@ -611,10 +409,10 @@
                     </div>
                     <a href="https://itch.io" target="_blank" class="visit-btn">访问 <i class="fas fa-external-link-alt"></i></a>
                 </div>
-            </div>
+            </article>
 
             <!-- 新添加的Z-Library网站 -->
-            <div class="website-card" data-category="learn" data-tags="电子书,免费,图书馆">
+            <article class="website-card" data-category="learn" data-tags="电子书,免费,图书馆">
                 <div class="card-header">
                     <div class="svg-icon icon-learn">
                         <i class="fas fa-book"></i>
@@ -630,10 +428,10 @@
                     </div>
                     <a href="https://zh.z-library.sk/" target="_blank" class="visit-btn">访问 <i class="fas fa-external-link-alt"></i></a>
                 </div>
-            </div>
+            </article>
 
             <!-- 新添加的鸠摩搜索网站 -->
-            <div class="website-card" data-category="learn" data-tags="电子书,搜索,免费">
+            <article class="website-card" data-category="learn" data-tags="电子书,搜索,免费">
                 <div class="card-header">
                     <div class="svg-icon icon-learn">
                         <i class="fas fa-book"></i>
@@ -649,10 +447,10 @@
                     </div>
                     <a href="https://www.jiumodiary.com/" target="_blank" class="visit-btn">访问 <i class="fas fa-external-link-alt"></i></a>
                 </div>
-            </div>
+            </article>
 
             <!-- 新添加的苦瓜书盘网站 -->
-            <div class="website-card" data-category="learn" data-tags="电子书,免费,资源">
+            <article class="website-card" data-category="learn" data-tags="电子书,免费,资源">
                 <div class="card-header">
                     <div class="svg-icon icon-learn">
                         <i class="fas fa-book"></i>
@@ -668,10 +466,10 @@
                     </div>
                     <a href="http://www.kgbook.com/" target="_blank" class="visit-btn">访问 <i class="fas fa-external-link-alt"></i></a>
                 </div>
-            </div>
+            </article>
 
             <!-- 新添加的Anna's Archive网站 -->
-            <div class="website-card" data-category="learn" data-tags="电子书,学术,免费">
+            <article class="website-card" data-category="learn" data-tags="电子书,学术,免费">
                 <div class="card-header">
                     <div class="svg-icon icon-learn">
                         <i class="fas fa-book"></i>
@@ -687,10 +485,10 @@
                     </div>
                     <a href="https://zh.annas-archive.org/" target="_blank" class="visit-btn">访问 <i class="fas fa-external-link-alt"></i></a>
                 </div>
-            </div>
+            </article>
 
             <!-- 新添加的搬书匠网站 -->
-            <div class="website-card" data-category="learn" data-tags="电子书,技术,免费">
+            <article class="website-card" data-category="learn" data-tags="电子书,技术,免费">
                 <div class="card-header">
                     <div class="svg-icon icon-learn">
                         <i class="fas fa-book"></i>
@@ -706,10 +504,10 @@
                     </div>
                     <a href="http://www.banshujiang.cn/" target="_blank" class="visit-btn">访问 <i class="fas fa-external-link-alt"></i></a>
                 </div>
-            </div>
+            </article>
 
             <!-- 新添加的摩比特书网站 -->
-            <div class="website-card" data-category="learn" data-tags="电子书,免费,资源">
+            <article class="website-card" data-category="learn" data-tags="电子书,免费,资源">
                 <div class="card-header">
                     <div class="svg-icon icon-learn">
                         <i class="fas fa-book"></i>
@@ -725,10 +523,10 @@
                     </div>
                     <a href="http://mobitushu.com/" target="_blank" class="visit-btn">访问 <i class="fas fa-external-link-alt"></i></a>
                 </div>
-            </div>
+            </article>
 
             <!-- 新添加的网易云在线解析网站 -->
-            <div class="website-card" data-category="media" data-tags="音乐,解析,网易云,免费">
+            <article class="website-card" data-category="media" data-tags="音乐,解析,网易云,免费">
                 <div class="card-header">
                     <div class="svg-icon icon-tools">
                         <i class="fas fa-music"></i>
@@ -744,10 +542,10 @@
                     </div>
                     <a href="https://tools.qzxdp.cn/wyy_vip" target="_blank" class="visit-btn">访问 <i class="fas fa-external-link-alt"></i></a>
                 </div>
-            </div>
+            </article>
 
             <!-- 新添加的全球每日热点新闻网站 -->
-            <div class="website-card" data-category="fun" data-tags="新闻,全球热点,懒人必备">
+            <article class="website-card" data-category="fun" data-tags="新闻,全球热点,懒人必备">
                 <div class="card-header">
                     <div class="svg-icon icon-fun">
                         <i class="fas fa-globe"></i>
@@ -763,10 +561,10 @@
                     </div>
                     <a href="https://leesoar.com/news" target="_blank" class="visit-btn">访问 <i class="fas fa-external-link-alt"></i></a>
                 </div>
-            </div>
+            </article>
 
             <!-- 新添加的腾讯/爱奇艺/优酷/芒果TV🎬网站 -->
-            <div class="website-card" data-category="fun media" data-tags="视频,解析,免费">
+            <article class="website-card" data-category="fun media" data-tags="视频,解析,免费">
                 <div class="card-header">
                     <div class="svg-icon icon-fun">
                         <i class="fas fa-film"></i>
@@ -782,155 +580,10 @@
                     </div>
                     <a href="https://www.nuliya.top/vip/" target="_blank" class="visit-btn">访问 <i class="fas fa-external-link-alt"></i></a>
                 </div>
-            </div>
-
-            <!-- 新添加的Ai换脸🔮（完全免费）网站 -->
-            <div class="website-card" data-category="ai" data-tags="AI,换脸,免费">
-                <div class="card-header">
-                    <div class="svg-icon icon-ai">
-                        <i class="fas fa-magic"></i>
-                    </div>
-                    <h3>Ai换脸🔮（完全免费）</h3>
-                </div>
-                <p class="description">免费AI换脸工具，支持双人/多人换脸及换衣功能，操作简单，效果逼真，轻松玩转创意！</p>
-                <div class="card-footer">
-                    <div class="tags">
-                        <span class="tag tag-type">AI换脸</span>
-                        <span class="tag tag-usage">免费工具</span>
-                        <span class="tag tag-usage">娱乐</span>
-                    </div>
-                    <a href="https://cn.faceswapper.ai/" target="_blank" class="visit-btn">访问 <i class="fas fa-external-link-alt"></i></a>
-                </div>
-            </div>
-
-            <!-- 10分钟邮箱 -->
-            <div class="website-card" data-category="temp-email" data-tags="工具,隐私">
-                <div class="card-header">
-                    <div class="svg-icon icon-tools">
-                        <i class="fas fa-envelope"></i>
-                    </div>
-                    <h3>10分钟邮箱</h3>
-                </div>
-                <p class="description">临时邮箱服务，无需注册即可使用</p>
-                <div class="card-footer">
-                    <div class="tags">
-                        <span class="tag tag-type">工具</span>
-                        <span class="tag tag-usage">隐私</span>
-                    </div>
-                    <a href="https://10minutemail.com" target="_blank" class="visit-btn">访问 <i class="fas fa-external-link-alt"></i></a>
-                </div>
-            </div>
-
-            <!-- New TempMail card -->
-            <div class="website-card" data-category="temp-email" data-tags="工具,隐私">
-                <div class="card-header">
-                    <div class="svg-icon icon-tools">
-                        <i class="fas fa-envelope"></i>
-                    </div>
-                    <h3>TempMail</h3>
-                </div>
-                <p class="description">临时邮箱服务，无需注册即可使用</p>
-                <div class="card-footer">
-                    <div class="tags">
-                        <span class="tag tag-type">工具</span>
-                        <span class="tag tag-usage">隐私</span>
-                    </div>
-                    <a href="https://tempmail.so/" target="_blank" class="visit-btn">访问 <i class="fas fa-external-link-alt"></i></a>
-                </div>
-            </div>
-
-            <!-- New MoEmail card -->
-            <div class="website-card" data-category="temp-email" data-tags="工具,隐私">
-                <div class="card-header">
-                    <div class="svg-icon icon-tools">
-                        <i class="fas fa-envelope"></i>
-                    </div>
-                    <h3>MoEmail</h3>
-                </div>
-                <p class="description">临时邮箱服务，无需注册即可使用</p>
-                <div class="card-footer">
-                    <div class="tags">
-                        <span class="tag tag-type">工具</span>
-                        <span class="tag tag-usage">隐私</span>
-                    </div>
-                    <a href="https://moemail.app/" target="_blank" class="visit-btn">访问 <i class="fas fa-external-link-alt"></i></a>
-                </div>
-            </div>
-
-            <!-- New Moakt card -->
-            <div class="website-card" data-category="temp-email" data-tags="工具,隐私">
-                <div class="card-header">
-                    <div class="svg-icon icon-tools">
-                        <i class="fas fa-envelope"></i>
-                    </div>
-                    <h3>Moakt</h3>
-                </div>
-                <p class="description">临时邮箱服务，无需注册即可使用</p>
-                <div class="card-footer">
-                    <div class="tags">
-                        <span class="tag tag-type">工具</span>
-                        <span class="tag tag-usage">隐私</span>
-                    </div>
-                    <a href="https://www.moakt.com/" target="_blank" class="visit-btn">访问 <i class="fas fa-external-link-alt"></i></a>
-                </div>
-            </div>
-
-            <!-- New TempMailo card -->
-            <div class="website-card" data-category="temp-email" data-tags="工具,隐私">
-                <div class="card-header">
-                    <div class="svg-icon icon-tools">
-                        <i class="fas fa-envelope"></i>
-                    </div>
-                    <h3>TempMailo</h3>
-                </div>
-                <p class="description">临时邮箱服务，无需注册即可使用</p>
-                <div class="card-footer">
-                    <div class="tags">
-                        <span class="tag tag-type">工具</span>
-                        <span class="tag tag-usage">隐私</span>
-                    </div>
-                    <a href="https://tempmailo.com/" target="_blank" class="visit-btn">访问 <i class="fas fa-external-link-alt"></i></a>
-                </div>
-            </div>
-
-            <!-- New Vmail card -->
-            <div class="website-card" data-category="temp-email" data-tags="工具,隐私">
-                <div class="card-header">
-                    <div class="svg-icon icon-tools">
-                        <i class="fas fa-envelope"></i>
-                    </div>
-                    <h3>Vmail</h3>
-                </div>
-                <p class="description">临时邮箱服务，无需注册即可使用</p>
-                <div class="card-footer">
-                    <div class="tags">
-                        <span class="tag tag-type">工具</span>
-                        <span class="tag tag-usage">隐私</span>
-                    </div>
-                    <a href="https://vmail.dev" target="_blank" class="visit-btn">访问 <i class="fas fa-external-link-alt"></i></a>
-                </div>
-            </div>
-
-            <!-- New Emailnator card -->
-            <div class="website-card" data-category="temp-email" data-tags="工具,隐私">
-                <div class="card-header">
-                    <div class="svg-icon icon-tools">
-                        <i class="fas fa-envelope"></i>
-                    </div>
-                    <h3>Emailnator</h3>
-                </div>
-                <p class="description">临时邮箱服务，无需注册即可使用</p>
-                <div class="card-footer">
-                    <div class="tags">
-                        <span class="tag tag-type">工具</span>
-                        <span class="tag tag-usage">隐私</span>
-                    </div>
-                    <a href="https://www.emailnator.com/" target="_blank" class="visit-btn">访问 <i class="fas fa-external-link-alt"></i></a>
-                </div>
-            </div>
+            </article>
 
             <!-- 新添加的图标下载站1 -->
-            <div class="website-card" data-category="tools" data-tags="图标,阿里巴巴,免费">
+            <article class="website-card" data-category="tools" data-tags="图标,阿里巴巴,免费">
                 <div class="card-header">
                     <div class="svg-icon icon-tools">
                         <i class="fas fa-icons"></i>
@@ -946,10 +599,10 @@
                     </div>
                     <a href="https://www.iconfont.cn/" target="_blank" class="visit-btn">访问 <i class="fas fa-external-link-alt"></i></a>
                 </div>
-            </div>
+            </article>
 
             <!-- 新添加的图标下载站2 -->
-            <div class="website-card" data-category="tools" data-tags="插图,开源,免费">
+            <article class="website-card" data-category="tools" data-tags="插图,开源,免费">
                 <div class="card-header">
                     <div class="svg-icon icon-tools">
                         <i class="fas fa-paint-brush"></i>
@@ -965,10 +618,10 @@
                     </div>
                     <a href="https://undraw.co/illustrations" target="_blank" class="visit-btn">访问 <i class="fas fa-external-link-alt"></i></a>
                 </div>
-            </div>
+            </article>
 
             <!-- 新添加的图标下载站3 -->
-            <div class="website-card" data-category="tools" data-tags="图标,免费,数量多">
+            <article class="website-card" data-category="tools" data-tags="图标,免费,数量多">
                 <div class="card-header">
                     <div class="svg-icon icon-tools">
                         <i class="fas fa-icons"></i>
@@ -984,10 +637,10 @@
                     </div>
                     <a href="https://icons8.com/icons/new" target="_blank" class="visit-btn">访问 <i class="fas fa-external-link-alt"></i></a>
                 </div>
-            </div>
+            </article>
 
             <!-- 新添加的网盘资源搜索网站 -->
-            <div class="website-card" data-category="network" data-tags="网盘,搜索,资源,夸克,迅雷,阿里,百度,天翼">
+            <article class="website-card" data-category="network" data-tags="网盘,搜索,资源,夸克,迅雷,阿里,百度,天翼">
                 <div class="card-header">
                     <div class="svg-icon icon-tools">
                         <i class="fas fa-cloud"></i>
@@ -1007,10 +660,10 @@
                     </div>
                     <a href="https://aipanso.com/" target="_blank" class="visit-btn">访问 <i class="fas fa-external-link-alt"></i></a>
                 </div>
-            </div>
+            </article>
 
             <!-- 新添加的免费图片处理工具 -->
-            <div class="website-card" data-category="tools" data-tags="图片处理,压缩,水印,移除背景,无广告">
+            <article class="website-card" data-category="tools" data-tags="图片处理,压缩,水印,移除背景,无广告">
                 <div class="card-header">
                     <div class="svg-icon icon-tools">
                         <i class="fas fa-image"></i>
@@ -1028,10 +681,10 @@
                     </div>
                     <a href="https://www.miaoyasuo.com/" target="_blank" class="visit-btn">访问 <i class="fas fa-external-link-alt"></i></a>
                 </div>
-            </div>
+            </article>
 
             <!-- 新添加的求职笔记网站 -->
-            <div class="website-card" data-category="learn" data-tags="求职,校招,社招,计算机,学习资源">
+            <article class="website-card" data-category="learn" data-tags="求职,校招,社招,计算机,学习资源">
                 <div class="card-header">
                     <div class="svg-icon icon-learn">
                         <i class="fas fa-book"></i>
@@ -1049,10 +702,10 @@
                     </div>
                     <a href="https://interviewguide.cn/" target="_blank" class="visit-btn">访问 <i class="fas fa-external-link-alt"></i></a>
                 </div>
-            </div>
+            </article>
 
             <!-- 新添加的在线图表生成器网站 -->
-            <div class="website-card" data-category="tools" data-tags="图表,折线图,柱状图,饼图,3D图表">
+            <article class="website-card" data-category="tools" data-tags="图表,折线图,柱状图,饼图,3D图表">
                 <div class="card-header">
                     <div class="svg-icon icon-tools">
                         <i class="fas fa-chart-line"></i>
@@ -1070,10 +723,10 @@
                     </div>
                     <a href="https://graph-maker.online/zh" target="_blank" class="visit-btn">访问 <i class="fas fa-external-link-alt"></i></a>
                 </div>
-            </div>
+            </article>
 
             <!-- 新添加的m3u8在线视频地址解析器网站 -->
-            <div class="website-card" data-category="media" data-tags="m3u8,视频解析,在线工具">
+            <article class="website-card" data-category="media" data-tags="m3u8,视频解析,在线工具">
                 <div class="card-header">
                     <div class="svg-icon icon-tools">
                         <i class="fas fa-video"></i>
@@ -1089,10 +742,10 @@
                     </div>
                     <a href="https://hgpcc-mp.hf.space/" target="_blank" class="visit-btn">访问 <i class="fas fa-external-link-alt"></i></a>
                 </div>
-            </div>
+            </article>
 
             <!-- 新添加的m3u8下载工具网站 -->
-            <div class="website-card" data-category="media" data-tags="m3u8,下载,批量下载">
+            <article class="website-card" data-category="media" data-tags="m3u8,下载,批量下载">
                 <div class="card-header">
                     <div class="svg-icon icon-tools">
                         <i class="fas fa-download"></i>
@@ -1108,10 +761,10 @@
                     </div>
                     <a href="https://hgpcc-m3u8.hf.space/" target="_blank" class="visit-btn">访问 <i class="fas fa-external-link-alt"></i></a>
                 </div>
-            </div>
+            </article>
 
             <!-- 新添加的文件传输工具网站 -->
-            <div class="website-card" data-category="network" data-tags="文件传输,免费,跨设备,到期时间,下载次数">
+            <article class="website-card" data-category="network" data-tags="文件传输,免费,跨设备,到期时间,下载次数">
                 <div class="card-header">
                     <div class="svg-icon icon-tools">
                         <i class="fas fa-file-upload"></i>
@@ -1129,10 +782,10 @@
                     </div>
                     <a href="https://send.vis.ee/" target="_blank" class="visit-btn">访问 <i class="fas fa-external-link-alt"></i></a>
                 </div>
-            </div>
+            </article>
 
             <!-- 新添加的网盘搜索导航网站 -->
-            <div class="website-card" data-category="network" data-tags="网盘搜索,导航,测评,免费">
+            <article class="website-card" data-category="network" data-tags="网盘搜索,导航,测评,免费">
                 <div class="card-header">
                     <div class="svg-icon icon-tools">
                         <i class="fas fa-search"></i>
@@ -1149,10 +802,10 @@
                     </div>
                     <a href="https://www.pansou.vip/" target="_blank" class="visit-btn">访问 <i class="fas fa-external-link-alt"></i></a>
                 </div>
-            </div>
+            </article>
 
             <!-- 新添加的商品历史价格查询网站 -->
-            <div class="website-card" data-category="tools" data-tags="商品,历史价格,查询,促销">
+            <article class="website-card" data-category="tools" data-tags="商品,历史价格,查询,促销">
                 <div class="card-header">
                     <div class="svg-icon icon-tools">
                         <i class="fas fa-chart-line"></i>
@@ -1168,10 +821,10 @@
                     </div>
                     <a href="https://www.hisprice.cn/" target="_blank" class="visit-btn">访问 <i class="fas fa-external-link-alt"></i></a>
                 </div>
-            </div>
+            </article>
 
             <!-- 新添加的在线PS网站1 -->
-            <div class="website-card" data-category="tools" data-tags="在线PS,图片编辑,免费">
+            <article class="website-card" data-category="tools" data-tags="在线PS,图片编辑,免费">
                 <div class="card-header">
                     <div class="svg-icon icon-tools">
                         <i class="fas fa-paint-brush"></i>
@@ -1187,10 +840,10 @@
                     </div>
                     <a href="https://www.ps.com/" target="_blank" class="visit-btn">访问 <i class="fas fa-external-link-alt"></i></a>
                 </div>
-            </div>
+            </article>
 
             <!-- 新添加的PPT模板下载站 -->
-            <div class="website-card" data-category="document" data-tags="PPT模板,下载,无广告">
+            <article class="website-card" data-category="document" data-tags="PPT模板,下载,无广告">
                 <div class="card-header">
                     <div class="svg-icon icon-tools">
                         <i class="fas fa-file-powerpoint"></i>
@@ -1206,10 +859,10 @@
                     </div>
                     <a href="https://m.2ppt.com/" target="_blank" class="visit-btn">访问 <i class="fas fa-external-link-alt"></i></a>
                 </div>
-            </div>
+            </article>
 
             <!-- 新添加的AI提示词反解析网站 -->
-            <div class="website-card" data-category="ai" data-tags="AI,提示词,反解析,图片">
+            <article class="website-card" data-category="ai" data-tags="AI,提示词,反解析,图片">
                 <div class="card-header">
                     <div class="svg-icon icon-ai">
                         <i class="fas fa-magic"></i>
@@ -1226,10 +879,10 @@
                     </div>
                     <a href="https://imagetoprompt.org/" target="_blank" class="visit-btn">访问 <i class="fas fa-external-link-alt"></i></a>
                 </div>
-            </div>
+            </article>
 
             <!-- 新添加的小火箭共享账号网站5 -->
-            <div class="website-card" data-category="rocket" data-tags="Shadowrocket,共享,网络">
+            <article class="website-card" data-category="rocket" data-tags="Shadowrocket,共享,网络">
                 <div class="card-header">
                     <div class="svg-icon icon-rocket">
                         <i class="fas fa-rocket"></i>
@@ -1245,10 +898,10 @@
                     </div>
                     <a href="https://ids.ailiao.eu/" target="_blank" class="visit-btn">访问 <i class="fas fa-external-link-alt"></i></a>
                 </div>
-            </div>
+            </article>
 
             <!-- 新添加的影视聚合搜索网站 -->
-            <div class="website-card" data-category="media" data-tags="影视,搜索,聚合,资源">
+            <article class="website-card" data-category="media" data-tags="影视,搜索,聚合,资源">
                 <div class="card-header">
                     <div class="svg-icon icon-tools">
                         <i class="fas fa-film"></i>
@@ -1264,10 +917,10 @@
                     </div>
                     <a href="https://wdoo.net/" target="_blank" class="visit-btn">访问 <i class="fas fa-external-link-alt"></i></a>
                 </div>
-            </div>
+            </article>
 
             <!-- 新添加的字帖生成器 -->
-            <div class="website-card" data-category="learn" data-tags="字帖,汉字,拼音,英文,免费">
+            <article class="website-card" data-category="learn" data-tags="字帖,汉字,拼音,英文,免费">
                 <div class="card-header">
                     <div class="svg-icon icon-learn">
                         <i class="fas fa-pen"></i>
@@ -1285,10 +938,10 @@
                     </div>
                     <a href="https://zitie.xueyuqu.com/" target="_blank" class="visit-btn">访问 <i class="fas fa-external-link-alt"></i></a>
                 </div>
-            </div>
+            </article>
 
             <!-- 新添加的简视频网站 -->
-            <div class="website-card" data-category="media" data-tags="视频,创作,导航,工具">
+            <article class="website-card" data-category="media" data-tags="视频,创作,导航,工具">
                 <div class="card-header">
                     <div class="svg-icon icon-tools">
                         <i class="fas fa-video"></i>
@@ -1304,302 +957,13 @@
                     </div>
                     <a href="https://www.aewz.com/" target="_blank" class="visit-btn">访问 <i class="fas fa-external-link-alt"></i></a>
                 </div>
-            </div>
+            </article>
 
             <!-- 新添加的壁纸网站组 -->
-            <div class="website-card" data-category="media" data-tags="壁纸,高清,免费">
+            <article class="website-card" data-category="media" data-tags="壁纸,高清,免费">
                 <div class="card-header">
                     <div class="svg-icon icon-tools">
                         <i class="fas fa-image"></i>
-        </div>
-                    <h3>HDQ Walls 🖼️</h3>
-                </div>
-                <p class="description">提供大量高清壁纸资源，涵盖多种类别，适合桌面和手机使用</p>
-                <div class="card-footer">
-                    <div class="tags">
-                        <span class="tag tag-type">壁纸</span>
-                        <span class="tag tag-feature">高清</span>
-                        <span class="tag tag-usage">免费</span>
-                    </div>
-                    <a href="https://hdqwalls.com/" target="_blank" class="visit-btn">访问 <i class="fas fa-external-link-alt"></i></a>
-                </div>
-            </div>
-
-            <div class="website-card" data-category="media" data-tags="壁纸,高清,免费">
-                <div class="card-header">
-                    <div class="svg-icon icon-tools">
-                        <i class="fas fa-image"></i>
-                    </div>
-                    <h3>暖糖壁纸 🖼️</h3>
-                </div>
-                <p class="description">提供高质量壁纸资源，适合各种设备使用，界面简洁易用</p>
-                <div class="card-footer">
-                    <div class="tags">
-                        <span class="tag tag-type">壁纸</span>
-                        <span class="tag tag-feature">高清</span>
-                        <span class="tag tag-usage">免费</span>
-                    </div>
-                    <a href="https://www.nuantang.net/" target="_blank" class="visit-btn">访问 <i class="fas fa-external-link-alt"></i></a>
-                </div>
-            </div>
-
-            <div class="website-card" data-category="media" data-tags="壁纸,高清,免费">
-                <div class="card-header">
-                    <div class="svg-icon icon-tools">
-                        <i class="fas fa-image"></i>
-                    </div>
-                    <h3>壁纸站 🖼️</h3>
-                </div>
-                <p class="description">提供大量高清壁纸资源，涵盖多种类别，适合桌面和手机使用</p>
-                <div class="card-footer">
-                    <div class="tags">
-                        <span class="tag tag-type">壁纸</span>
-                        <span class="tag tag-feature">高清</span>
-                        <span class="tag tag-usage">免费</span>
-                    </div>
-                    <a href="https://bz.zzzmh.cn/index" target="_blank" class="visit-btn">访问 <i class="fas fa-external-link-alt"></i></a>
-                </div>
-            </div>
-
-            <div class="website-card" data-category="media" data-tags="壁纸,动漫,免费">
-                <div class="card-header">
-                    <div class="svg-icon icon-tools">
-                        <i class="fas fa-image"></i>
-                    </div>
-                    <h3>Anime Pictures 🖼️</h3>
-                </div>
-                <p class="description">专注于动漫壁纸的网站，提供大量高质量的动漫图片资源</p>
-                <div class="card-footer">
-                    <div class="tags">
-                        <span class="tag tag-type">壁纸</span>
-                        <span class="tag tag-feature">动漫</span>
-                        <span class="tag tag-usage">免费</span>
-                    </div>
-                    <a href="https://anime-pictures.net/" target="_blank" class="visit-btn">访问 <i class="fas fa-external-link-alt"></i></a>
-                </div>
-            </div>
-
-            <div class="website-card" data-category="media" data-tags="壁纸,高清,免费">
-                <div class="card-header">
-                    <div class="svg-icon icon-tools">
-                        <i class="fas fa-image"></i>
-                    </div>
-                    <h3>Wallpaper Cave 🖼️</h3>
-                </div>
-                <p class="description">提供大量高清壁纸资源，涵盖多种类别，适合桌面和手机使用</p>
-                <div class="card-footer">
-                    <div class="tags">
-                        <span class="tag tag-type">壁纸</span>
-                        <span class="tag tag-feature">高清</span>
-                        <span class="tag tag-usage">免费</span>
-                    </div>
-                    <a href="https://wallpapercave.com/" target="_blank" class="visit-btn">访问 <i class="fas fa-external-link-alt"></i></a>
-                </div>
-            </div>
-
-            <div class="website-card" data-category="media" data-tags="壁纸,高清,免费">
-                <div class="card-header">
-                    <div class="svg-icon icon-tools">
-                        <i class="fas fa-image"></i>
-                    </div>
-                    <h3>UHD Paper 🖼️</h3>
-                </div>
-                <p class="description">提供超高清壁纸资源，适合4K及更高分辨率的设备使用</p>
-                <div class="card-footer">
-                    <div class="tags">
-                        <span class="tag tag-type">壁纸</span>
-                        <span class="tag tag-feature">高清</span>
-                        <span class="tag tag-usage">免费</span>
-                    </div>
-                    <a href="https://www.uhdpaper.com/" target="_blank" class="visit-btn">访问 <i class="fas fa-external-link-alt"></i></a>
-                </div>
-            </div>
-
-            <!-- 新添加的在线听歌网站 -->
-            <div class="website-card" data-category="media" data-tags="音乐,在线听歌,免费">
-                <div class="card-header">
-                    <div class="svg-icon icon-tools">
-                        <i class="fas fa-music"></i>
-                    </div>
-                    <h3>QQMP3 🎶</h3>
-                </div>
-                <p class="description">提供丰富的在线音乐资源，支持免费在线听歌，适合音乐爱好者</p>
-                <div class="card-footer">
-                    <div class="tags">
-                        <span class="tag tag-type">音乐</span>
-                        <span class="tag tag-feature">在线听歌</span>
-                        <span class="tag tag-usage">免费</span>
-                    </div>
-                    <a href="https://www.qqmp3.vip/" target="_blank" class="visit-btn">访问 <i class="fas fa-external-link-alt"></i></a>
-                </div>
-            </div>
-
-            <div class="website-card" data-category="media" data-tags="影视,资源,免费">
-                <div class="card-header">
-                    <div class="svg-icon icon-tools">
-                        <i class="fas fa-film"></i>
-                    </div>
-                    <h3>7 Movie 🎬</h3>
-                </div>
-                <p class="description">提供丰富的影视资源，支持在线观看和下载，适合电影爱好者</p>
-                <div class="card-footer">
-                    <div class="tags">
-                        <span class="tag tag-type">影视</span>
-                        <span class="tag tag-usage">资源</span>
-                        <span class="tag tag-usage">免费</span>
-                    </div>
-                    <a href="https://www.7.movie/" target="_blank" class="visit-btn">访问 <i class="fas fa-external-link-alt"></i></a>
-                </div>
-            </div>
-
-            <div class="website-card" data-category="media" data-tags="影视,资源,免费">
-                <div class="card-header">
-                    <div class="svg-icon icon-tools">
-                        <i class="fas fa-film"></i>
-                    </div>
-                    <h3>JQQZX 🎬</h3>
-                </div>
-                <p class="description">一个影视资源网站，提供多种电影和电视剧资源，支持在线观看和下载</p>
-                <div class="card-footer">
-                    <div class="tags">
-                        <span class="tag tag-type">影视</span>
-                        <span class="tag tag-usage">资源</span>
-                        <span class="tag tag-usage">免费</span>
-                    </div>
-                    <a href="https://www.jqqzx.me/" target="_blank" class="visit-btn">访问 <i class="fas fa-external-link-alt"></i></a>
-                </div>
-            </div>
-
-            <div class="website-card" data-category="document" data-tags="PPT模板,下载,免费">
-                <div class="card-header">
-                    <div class="svg-icon icon-tools">
-                        <i class="fas fa-file-powerpoint"></i>
-                    </div>
-                    <h3>PPT Tools 🖼️</h3>
-                </div>
-                <p class="description">提供丰富的PPT模板资源，支持免费下载，适合需要快速制作演示文稿的用户</p>
-                <div class="card-footer">
-                    <div class="tags">
-                        <span class="tag tag-type">PPT模板</span>
-                        <span class="tag tag-usage">下载</span>
-                        <span class="tag tag-usage">免费</span>
-                    </div>
-                    <a href="https://ppt.cdtools.click/" target="_blank" class="visit-btn">访问 <i class="fas fa-external-link-alt"></i></a>
-                </div>
-            </div>
-
-            <div class="website-card" data-category="document" data-tags="PPT模板,下载,免费">
-                <div class="card-header">
-                    <div class="svg-icon icon-tools">
-                        <i class="fas fa-file-powerpoint"></i>
-                    </div>
-                    <h3>51PPT模板 🖼️</h3>
-                </div>
-                <p class="description">提供大量高质量的PPT模板资源，支持免费下载，适合各种演示需求</p>
-                <div class="card-footer">
-                    <div class="tags">
-                        <span class="tag tag-type">PPT模板</span>
-                        <span class="tag tag-usage">下载</span>
-                        <span class="tag tag-usage">免费</span>
-                    </div>
-                    <a href="https://www.51pptmoban.com/" target="_blank" class="visit-btn">访问 <i class="fas fa-external-link-alt"></i></a>
-                </div>
-            </div>
-
-            <!-- 新添加的MCP服务器网站 -->
-            <div class="website-card" data-category="network" data-tags="MCP,服务器,网络工具">
-                <div class="card-header">
-                    <div class="svg-icon icon-tools">
-                        <i class="fas fa-server"></i>
-                    </div>
-                    <h3>MCP Servers</h3>
-                </div>
-                <p class="description">提供Minecraft服务器相关资源和服务，适合Minecraft玩家和服务器管理员</p>
-                <div class="card-footer">
-                    <div class="tags">
-                        <span class="tag tag-type">MCP</span>
-                        <span class="tag tag-usage">服务器</span>
-                        <span class="tag tag-usage">网络工具</span>
-                    </div>
-                    <a href="https://mcpservers.org/" target="_blank" class="visit-btn">访问 <i class="fas fa-external-link-alt"></i></a>
-                </div>
-            </div>
-
-            <!-- 新添加的MCP网站 -->
-            <div class="website-card" data-category="network" data-tags="MCP,网络工具">
-                <div class="card-header">
-                    <div class="svg-icon icon-tools">
-                        <i class="fas fa-globe"></i>
-                    </div>
-                    <h3>MCP</h3>
-                </div>
-                <p class="description">提供MCP相关服务和资源，适合Minecraft玩家和开发者</p>
-                <div class="card-footer">
-                    <div class="tags">
-                        <span class="tag tag-type">MCP</span>
-                        <span class="tag tag-usage">网络工具</span>
-                    </div>
-                    <a href="https://mcp.so/" target="_blank" class="visit-btn">访问 <i class="fas fa-external-link-alt"></i></a>
-                </div>
-            </div>
-
-            <!-- 新添加的MCP商店网站 -->
-            <div class="website-card" data-category="network" data-tags="MCP,商店,网络工具">
-                <div class="card-header">
-                    <div class="svg-icon icon-tools">
-                        <i class="fas fa-shopping-cart"></i>
-                    </div>
-                    <h3>MCP Store</h3>
-                </div>
-                <p class="description">提供MCP相关产品和服务的在线商店，适合Minecraft玩家和开发者</p>
-                <div class="card-footer">
-                    <div class="tags">
-                        <span class="tag tag-type">MCP</span>
-                        <span class="tag tag-usage">商店</span>
-                        <span class="tag tag-usage">网络工具</span>
-                    </div>
-                    <a href="https://mcpstore.co/" target="_blank" class="visit-btn">访问 <i class="fas fa-external-link-alt"></i></a>
-                </div>
-            </div>
-
-            <!-- 新添加的VPN节点IP检测网站 -->
-            <div class="website-card" data-category="network" data-tags="VPN,IP检测,节点检测,原生IP">
-                <div class="card-header">
-                    <div class="svg-icon icon-tools">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <h3>VPN节点IP检测 ✈️</h3>
-                </div>
-                <p class="description">全自动全方位检测你的机场节点IP，是不是家宽原生IP节点一查便知</p>
-                <div class="card-footer">
-                    <div class="tags">
-                        <span class="tag tag-type">VPN检测</span>
-                        <span class="tag tag-feature">IP检测</span>
-                        <span class="tag tag-usage">节点检测</span>
-                        <span class="tag tag-usage">原生IP</span>
-                    </div>
-                    <a href="https://ipjiance.com/" target="_blank" class="visit-btn">访问 <i class="fas fa-external-link-alt"></i></a>
-                </div>
-            </div>
-
-            <!-- 新添加的趣图制作网站 -->
-            <div class="website-card" data-category="fun" data-tags="趣图,制作,模板">
-                <div class="card-header">
-                    <div class="svg-icon icon-fun">
-                        <i class="fas fa-image"></i>
-                    </div>
-                    <h3>Petpet 趣图制作 🖼️</h3>
-                </div>
-                <p class="description">使用 Petpet 模板制作趣图，支持多种模板选择，操作简单，效果有趣～</p>
-                <div class="card-footer">
-                    <div class="tags">
-                        <span class="tag tag-type">趣图制作</span>
-                        <span class="tag tag-feature">模板</span>
-                        <span class="tag tag-usage">娱乐</span>
-                    </div>
-                    <a href="https://d2n.moe/petpet-js/?template=frieren_take" target="_blank" class="visit-btn">访问 <i class="fas fa-external-link-alt"></i></a>
-                </div>
-            </div>
         </div>
     </main>
 

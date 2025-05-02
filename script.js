@@ -93,44 +93,20 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     // 搜索功能
-    searchButton.addEventListener('click', performSearch);
-    searchInput.addEventListener('keypress', function(e) {
-        if (e.key === 'Enter') {
-            performSearch();
-        }
-    });
-    
-    // 执行搜索
-    function performSearch() {
-        const searchTerm = searchInput.value.toLowerCase().trim();
-        
-        if (searchTerm === '') {
-            // 如果搜索词为空，重置为显示所有
-            const activeTab = document.querySelector('.tab-btn.active');
-            const activeCategory = activeTab.getAttribute('data-category');
-            filterWebsites(activeCategory);
-            return;
-        }
-        
+    searchButton.addEventListener('click', function() {
+        const searchTerm = searchInput.value.toLowerCase();
         const cards = document.querySelectorAll('.website-card');
         
         cards.forEach(card => {
             const title = card.querySelector('h3').textContent.toLowerCase();
             const description = card.querySelector('.description').textContent.toLowerCase();
-            const tags = Array.from(card.querySelectorAll('.tag')).map(tag => tag.textContent.toLowerCase());
-            
-            // 如果标题、描述或标签中包含搜索词，则显示
-            if (
-                title.includes(searchTerm) || 
-                description.includes(searchTerm) || 
-                tags.some(tag => tag.includes(searchTerm))
-            ) {
-                card.style.display = 'flex';
+            if (title.includes(searchTerm) || description.includes(searchTerm)) {
+                card.style.display = 'block';
             } else {
                 card.style.display = 'none';
             }
         });
-    }
+    });
     
     // 添加网站模态框
     addSiteBtn.addEventListener('click', function() {
