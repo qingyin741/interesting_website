@@ -5,41 +5,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const searchButton = document.getElementById('searchButton');
     const websitesGrid = document.getElementById('websitesGrid');
     const categoryTabs = document.querySelectorAll('.tab-btn');
-    const addSiteBtn = document.getElementById('addSiteBtn');
-    const addSiteModal = document.getElementById('addSiteModal');
-    const closeModal = document.querySelector('.close');
-    const addSiteForm = document.getElementById('addSiteForm');
-    
-    // 本地存储键
-    const STORAGE_KEY = 'interestingWebsites';
-    
-    // 初始化网站数据
-    let websitesData = getStoredWebsites();
-    
-    // 从本地存储加载网站数据
-    function getStoredWebsites() {
-        const storedData = localStorage.getItem(STORAGE_KEY);
-        if (storedData) {
-            return JSON.parse(storedData);
-        }
-        return []; // 如果没有存储数据，返回空数组
-    }
-    
-    // 保存网站数据到本地存储
-    function saveWebsites() {
-        localStorage.setItem(STORAGE_KEY, JSON.stringify(websitesData));
-    }
-    
-    // 渲染存储的网站
-    function renderStoredWebsites() {
-        // 只渲染用户添加的网站
-        websitesData.forEach(site => {
-            createWebsiteCard(site);
-        });
-    }
-    
-    // 渲染存储的网站
-    renderStoredWebsites();
     
     // 创建网站卡片
     function createWebsiteCard(site) {
@@ -99,6 +64,20 @@ document.addEventListener('DOMContentLoaded', function() {
             performSearch();
         }
     });
+    searchInput.addEventListener('input', debounce(performSearch, 300));
+    
+    // 防抖函数
+    function debounce(func, wait) {
+        let timeout;
+        return function executedFunction(...args) {
+            const later = () => {
+                clearTimeout(timeout);
+                func.apply(this, args);
+            };
+            clearTimeout(timeout);
+            timeout = setTimeout(later, wait);
+        };
+    }
     
     // 执行搜索
     function performSearch() {
@@ -132,59 +111,4 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // 添加网站模态框
-    addSiteBtn.addEventListener('click', function() {
-        addSiteModal.style.display = 'block';
-    });
-    
-    // 关闭模态框
-    closeModal.addEventListener('click', function() {
-        addSiteModal.style.display = 'none';
-    });
-    
-    // 点击模态框外部关闭
-    window.addEventListener('click', function(event) {
-        if (event.target === addSiteModal) {
-            addSiteModal.style.display = 'none';
-        }
-    });
-    
-    // 提交添加网站表单
-    addSiteForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        // 获取表单数据
-        const siteName = document.getElementById('siteName').value.trim();
-        const siteUrl = document.getElementById('siteUrl').value.trim();
-        const siteDescription = document.getElementById('siteDescription').value.trim();
-        const siteCategory = document.getElementById('siteCategory').value;
-        const siteTags = document.getElementById('siteTags').value.split(',')
-            .map(tag => tag.trim())
-            .filter(tag => tag !== '');
-        
-        // 创建新网站对象
-        const newSite = {
-            name: siteName,
-            url: siteUrl,
-            description: siteDescription,
-            category: siteCategory,
-            tags: siteTags
-        };
-        
-        // 添加到数据数组
-        websitesData.push(newSite);
-        
-        // 保存到本地存储
-        saveWebsites();
-        
-        // 创建并添加到网格
-        createWebsiteCard(newSite);
-        
-        // 重置表单并关闭模态框
-        addSiteForm.reset();
-        addSiteModal.style.display = 'none';
-        
-        // 通知用户
-        alert('网站已成功添加！');
-    });
-}); 
+});

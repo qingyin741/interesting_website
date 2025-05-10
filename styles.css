@@ -337,6 +337,262 @@ footer a:hover {
     text-decoration: underline;
 }
 
+/* 添加背景动画效果 */
+.bg-animation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.bg-animation li {
+    position: absolute;
+    display: block;
+    list-style: none;
+    width: 20px;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    animation: animate 25s linear infinite;
+    bottom: -150px;
+    border-radius: 50%;
+}
+
+.bg-animation li:nth-child(1) {
+    left: 25%;
+    width: 80px;
+    height: 80px;
+    animation-delay: 0s;
+}
+
+.bg-animation li:nth-child(2) {
+    left: 10%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 2s;
+    animation-duration: 12s;
+}
+
+.bg-animation li:nth-child(3) {
+    left: 70%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 4s;
+}
+
+.bg-animation li:nth-child(4) {
+    left: 40%;
+    width: 60px;
+    height: 60px;
+    animation-delay: 0s;
+    animation-duration: 18s;
+}
+
+.bg-animation li:nth-child(5) {
+    left: 65%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 0s;
+}
+
+.bg-animation li:nth-child(6) {
+    left: 75%;
+    width: 110px;
+    height: 110px;
+    animation-delay: 3s;
+}
+
+.bg-animation li:nth-child(7) {
+    left: 35%;
+    width: 150px;
+    height: 150px;
+    animation-delay: 7s;
+}
+
+.bg-animation li:nth-child(8) {
+    left: 50%;
+    width: 25px;
+    height: 25px;
+    animation-delay: 15s;
+    animation-duration: 45s;
+}
+
+.bg-animation li:nth-child(9) {
+    left: 20%;
+    width: 15px;
+    height: 15px;
+    animation-delay: 2s;
+    animation-duration: 35s;
+}
+
+.bg-animation li:nth-child(10) {
+    left: 85%;
+    width: 150px;
+    height: 150px;
+    animation-delay: 0s;
+    animation-duration: 11s;
+}
+
+@keyframes animate {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+        border-radius: 50%;
+    }
+    100% {
+        transform: translateY(-1000px) rotate(720deg);
+        opacity: 0;
+        border-radius: 50%;
+    }
+}
+
+/* 卡片内自定义SVG图标 */
+.svg-icon {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    color: white;
+    font-size: 24px;
+}
+
+.icon-ai {
+    background: linear-gradient(135deg, #ff6b6b, #6b66ff);
+}
+
+.icon-api {
+    background: linear-gradient(135deg, #33b5e5, #0099cc);
+}
+
+.icon-tools {
+    background: linear-gradient(135deg, #8bc34a, #4caf50);
+}
+
+.icon-learn {
+    background: linear-gradient(135deg, #ff9800, #ff5722);
+}
+
+.icon-fun {
+    background: linear-gradient(135deg, #9c27b0, #673ab7);
+}
+
+/* 波浪效果 */
+.wave-container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.wave-container svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 55px;
+}
+
+.wave-container .shape-fill {
+    fill: #FFFFFF;
+}
+
+/* 顶部动画 */
+.header-animation {
+    position: relative;
+}
+
+/* 爱心动画效果 */
+.heart-pulse {
+    display: inline-block;
+    animation: heartbeat 1.5s ease infinite;
+    color: #ff4757;
+}
+
+@keyframes heartbeat {
+    0% { transform: scale(1); }
+    25% { transform: scale(1.1); }
+    50% { transform: scale(1); }
+    75% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+/* 新增小火箭图标样式 */
+.icon-rocket {
+    background: linear-gradient(135deg, #ff4757, #ff6b6b);
+}
+
+/* 新增闪烁动画 */
+.blink {
+    animation: blink 1.5s infinite;
+}
+
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+
+/* Favicon animations */
+@keyframes float {
+    0% { transform: translateY(0px) rotate(0deg); }
+    25% { transform: translateY(-5px) rotate(2deg); }
+    50% { transform: translateY(0px) rotate(0deg); }
+    75% { transform: translateY(5px) rotate(-2deg); }
+    100% { transform: translateY(0px) rotate(0deg); }
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes sparkle {
+    0% { opacity: 0.2; }
+    50% { opacity: 1; }
+    100% { opacity: 0.2; }
+}
+
+@keyframes colorShift {
+    0% { stop-color: #00E5FF; }
+    33% { stop-color: #FF00E5; }
+    66% { stop-color: #E5FF00; }
+    100% { stop-color: #00E5FF; }
+}
+
+.compass {
+    animation: float 4s ease-in-out infinite;
+}
+
+.ring {
+    animation: spin 15s linear infinite;
+    transform-origin: center;
+}
+
+.sparkle {
+    animation: sparkle 1.5s ease-in-out infinite;
+    transform-origin: center;
+}
+
+.stop1 {
+    animation: colorShift 12s linear infinite;
+}
+
+.stop2 {
+    animation: colorShift 12s linear infinite;
+    animation-delay: -4s;
+}
+
+.stop3 {
+    animation: colorShift 12s linear infinite;
+    animation-delay: -8s;
+}
+
 /* 响应式设计 */
 @media (max-width: 768px) {
     .categories {
@@ -357,4 +613,4 @@ footer a:hover {
     .website-card {
         max-width: 100%;
     }
-} 
+}
